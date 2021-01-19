@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"> -->
+    <link
+        rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑🏾‍🤝‍🧑🏻</text></svg>"
+    />
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
         <title>TimsCounter</title>
     </head>
     <body>
-        <label for="number" id="number">Think of a number:</label>
-        <input
-            type="number"
-            name="number"
-            min="0"
-            oninput="validity.valid||(value='');"
-        />
+        <form onSubmit="calcCapacity('user_num');">
+            <label for="user_num">Think of a number:</label>
+            <input
+                type="number"
+                id="usernum"
+                name="user_num"
+                min="0"
+                oninput="validity.valid||(value='');"
+            />
 
-        <label for="items">Choose an item:</label>
+            <label for="user_item">Choose an item:</label>
 
-        <select name="items" id="items">
-            <option value="car">Car</option>
-            <option value="bus">Bus</option>
-            <option value="Boeing747">Boeing 747</option>
-            <option value="Olympia_stadion">Olympia Stadion</option>
-        </select>
+            <select name="user_item" id="useritem">
+                <option value="car">Car</option>
+                <option value="bus">Bus</option>
+                <option value="Boeing747">Boeing 747</option>
+                <option value="Olympia_stadion">Olympia Stadion</option>
+            </select>
 
-        <input type="submit" value="submit" />
+            <input type="submit" value="submit" />
+        </form>
+
+        <section id="display">
+            <p id="stuff">please wait</p>
+        </section>
     </body>
-    <script src="script.js"></script>
 </html>
