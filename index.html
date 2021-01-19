@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>TimsCounter</title>
+    </head>
+    <body>
+        <label for="number" id="number">Think of a number:</label>
+        <input
+            type="number"
+            name="number"
+            min="0"
+            oninput="validity.valid||(value='');"
+        />
+
+        <label for="items">Choose an item:</label>
+
+        <select name="items" id="items">
+            <option value="car">Car</option>
+            <option value="bus">Bus</option>
+            <option value="Boeing747">Boeing 747</option>
+            <option value="Olympia_stadion">Olympia Stadion</option>
+        </select>
+
+        <input type="submit" value="submit" />
+    </body>
+    <script src="script.js"></script>
+</html>
