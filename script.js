@@ -1,4 +1,4 @@
-console.log("script connected");
+console.log("script connected", $);
 let items = [
     { name: "car", capacity: 5, image: "assets/car.jpg" },
     { name: "bus", capacity: 60, image: "assets/berlinbus.png" },
@@ -6,10 +6,14 @@ let items = [
     { name: "OlympiaStadion", capacity: 75000, image: "🏟️" },
 ];
 
-function calcCapacity(user_num) {
-    if (document.getElementById("usernum").value === "12") {
-        document.getElementById("stuff").innerHTML = "you chose 12";
-    } else {
-        document.getElementById("stuff").innerHTML = "you didn't choose 12";
-    }
+function calcCapacity(usernum) {
+    let user_num = $("#usernum").val();
+    //alert(user_num);
+    $(".display-modal").addClass("vis");
+    $(".results").html(`you chose ` + user_num);
 }
+
+$(".X").on("click", function(e) {
+    $(".display-modal").removeClass("vis");
+    location.reload();
+});

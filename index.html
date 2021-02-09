@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"> -->
     <link
         rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑🏾‍🤝‍🧑🏻</text></svg>"
@@ -9,11 +8,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
-        <script src="script.js"></script>
+        
         <title>TimsCounter</title>
     </head>
     <body>
-        <form onSubmit="calcCapacity('user_num');">
+        <form >
             <label for="user_num">Think of a number:</label>
             <input
                 type="number"
@@ -32,11 +31,21 @@
                 <option value="Olympia_stadion">Olympia Stadion</option>
             </select>
 
-            <input type="submit" value="submit" />
+            <input type="button" value="Submit" onclick="calcCapacity('usernum');"/>
         </form>
 
-        <section id="display">
-            <p id="stuff">please wait</p>
-        </section>
+
+        <div class="display-modal">
+            <div class="modal-x">
+                <p class="X">X</p>
+                </div>
+                <div class="results">
+                </div>
+            </div>
+        </div>
+
     </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
 </html>
