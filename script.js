@@ -6,15 +6,16 @@ let items = [
     { name: "OlympiaStadion", capacity: 75000, image: "🏟️" },
 ];
 
-function calcCapacity(usernum) {
+function calcCapacity() {
     let user_num = $("#usernum").val();
+    let user_item = $("#useritem").val();
 
     $(".display-modal").addClass("vis");
 
     if (!user_num || user_num == 0) {
         $(".results").html(`please choose a number`);
     } else {
-        $(".results").html(`you chose ` + user_num);
+        $(".results").html(`you chose ` + user_num + " " + user_item);
     }
 }
 
