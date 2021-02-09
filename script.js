@@ -9,30 +9,40 @@ let vehicles = [
 function calcCapacity() {
     let people = $("#usernum").val();
     let vehicle = $("#useritem").val();
-    let usercapacity = vehicles.find((item) => item.name === vehicle).capacity;
+    let vCap = vehicles.find((item) => item.name === vehicle).capacity;
     let vPic = vehicles.find((item) => item.name === vehicle).image;
+    let result;
+
+    let pics;
 
     $(".display-modal").addClass("vis");
 
     if (!people || people == 0) {
         $(".results").html(`please choose a number`);
     } else {
+        let quotient = Math.floor(people / vCap);
+        let remainder = people % vCap;
+        //result = +(people / vCap).toFixed(2);
+        result = quotient;
+
+        let space = vCap - remainder;
+
         $(".results").html(
-            `you chose ` +
-                people +
+            people +
+                " people will fit into " +
+                result +
                 " " +
                 vehicle +
-                " which has a capacity of " +
-                usercapacity
+                "(s)" +
+                " with " +
+                space +
+                " space(s) left over"
         );
 
         //Note number to equal output of capacity calculations
-        let number = people;
-        let pics;
-
+        let number = result;
         for (var i = 0; i < number; i++) {
             pics = "<img src='" + vPic + "'/>";
-            console.log(pics);
             $("#pic .img").append(pics);
         }
     }
