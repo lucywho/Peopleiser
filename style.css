@@ -55,7 +55,7 @@ select {
     width: 90%;
 }
 
-.pic {
+#pic {
     background-color: green;
     padding: 5px;
     min-height: 50px;

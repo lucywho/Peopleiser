@@ -26,10 +26,15 @@ function calcCapacity() {
                 usercapacity
         );
 
-        let wide = people * 100;
-        $(".pic")
-            .css("width", wide + "px")
-            .html('<img src = "' + vPic + '" />');
+        //Note number to equal output of capacity calculations
+        let number = people;
+        let pics;
+
+        for (var i = 0; i < number; i++) {
+            pics = "<img src='" + vPic + "'/>";
+            console.log(pics);
+            $("#pic .img").append(pics);
+        }
     }
 }
 
@@ -37,3 +42,6 @@ $(".X").on("click", function(e) {
     $(".display-modal").removeClass("vis");
     location.reload();
 });
+
+//variable width
+// let wide = remainder from capacity calc ; final pic to have .css("width", wide + "px") /
