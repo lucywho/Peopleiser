@@ -8,9 +8,14 @@ let items = [
 
 function calcCapacity(usernum) {
     let user_num = $("#usernum").val();
-    //alert(user_num);
+
     $(".display-modal").addClass("vis");
-    $(".results").html(`you chose ` + user_num);
+
+    if (!user_num || user_num == 0) {
+        $(".results").html(`please choose a number`);
+    } else {
+        $(".results").html(`you chose ` + user_num);
+    }
 }
 
 $(".X").on("click", function(e) {
