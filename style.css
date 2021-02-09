@@ -54,3 +54,15 @@ select {
     padding: 5px;
     width: 90%;
 }
+
+.pic {
+    background-color: green;
+    padding: 5px;
+    min-height: 50px;
+    width: 50px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
