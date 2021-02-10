@@ -34,29 +34,36 @@ label {
     background-color: #88ccf1;
 }
 
-input:hover {
+#submit:hover {
     background-color: #3587a4;
     color: #88ccf1;
 }
 
-.display-modal {
-    border: #3587a4 5px solid;
-    background-color: #88ccf1;
-    border-radius: 10px;
+select:focus {
+    outline: none;
+}
 
+.display-modal {
+    background-color: #88ccf1;
+    border: #3587a4 5px solid;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    visibility: hidden;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    min-height: 20vh;
     margin: auto;
     margin-top: 1%;
+    min-height: 20vh;
+    visibility: hidden;
+    width: 90%;
+    transform: translateX(100%);
 }
 
 .vis {
     visibility: visible;
+    transform: translateX(0);
+    transition-property: transform;
+    transition-duration: 3s;
 }
 
 .modal-x {
@@ -79,7 +86,7 @@ input:hover {
 }
 
 .results {
-    width: 90%;
+    width: 95%;
     background-color: #88ccf1;
     margin: 0 0 1% 0;
 }

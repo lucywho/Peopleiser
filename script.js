@@ -44,6 +44,7 @@ $(document).ready(function() {
     <label for="user_num">people?</label>
 
     <input
+        id="submit"
         type="button"
         value="Submit"
         onclick="calcCapacity('usernum', 'useritem');"
@@ -71,6 +72,8 @@ function calcCapacity() {
     let seats;
 
     $(".display-modal").addClass("vis");
+
+    $(".results").html(`Calculating. Please wait`);
 
     if (!people || people == 0) {
         $(".results").html(`please choose a number`);
