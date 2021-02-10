@@ -88,12 +88,15 @@ label {
 
     background-color: #3587a4;
     border-radius: 10px;
-    margin-bottom: 1%;
+    margin-bottom: 1rem;
 }
 
 img {
     height: 100px;
+    object-fit: cover;
+    min-width: 150px;
     margin: 10px;
-    border: #3587a4 2px solid;
+    border: #88ccf1 2px solid;
     border-radius: 10px;
+    box-shadow: 10px 5px 5px #050f0f;
 }

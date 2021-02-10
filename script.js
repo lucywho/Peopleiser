@@ -1,5 +1,5 @@
 console.log("script connected", $);
-let vehicles = [
+let data = [
     { name: "car", capacity: 4, image: "assets/car.jpg", listAs: "Cars" },
     {
         name: "bus",
@@ -14,6 +14,12 @@ let vehicles = [
         listAs: "Boeing747s",
     },
     {
+        name: "Ferry",
+        capacity: 2000,
+        image: "assets/ferry.jpg",
+        listAs: "Cross Channel Ferries",
+    },
+    {
         name: "OlympiaStadion",
         capacity: 75000,
         image: "assets/olympstad.jpg",
@@ -21,23 +27,10 @@ let vehicles = [
     },
 ];
 
-let option1 = vehicles[0].name;
-let option2 = vehicles[1].name;
-let option3 = vehicles[2].name;
-let option4 = vehicles[3].name;
-
-let listAs1 = vehicles[0].listAs;
-let listAs2 = vehicles[1].listAs;
-let listAs3 = vehicles[2].listAs;
-let listAs4 = vehicles[3].listAs;
-
 $(document).ready(function() {
     $("#userInput").html(`<label for="user_item">How many </label>
     <select name="user_item" id="useritem">
-    <option value="${option1}">${listAs1}</option>
-    <option value="${option2}">${listAs2}</option>
-    <option value="${option3}">${listAs3}</option>
-    <option value="${option4}">${listAs4}</option>
+    
     </select>
     <p>would I need to fit in</p>
     <input
@@ -55,6 +48,12 @@ $(document).ready(function() {
         value="Submit"
         onclick="calcCapacity('usernum', 'useritem');"
     />`);
+
+    for (let i = 0; i < data.length; i++) {
+        $("#useritem").append(
+            "<option value=" + data[i].name + ">" + data[i].listAs + "</option>"
+        );
+    }
 });
 
 function calcCapacity() {
@@ -65,8 +64,8 @@ function calcCapacity() {
 
     let people = $("#usernum").val();
     let vehicle = $("#useritem").val();
-    let vCap = vehicles.find((item) => item.name === vehicle).capacity;
-    let vPic = vehicles.find((item) => item.name === vehicle).image;
+    let vCap = data.find((item) => item.name === vehicle).capacity;
+    let vPic = data.find((item) => item.name === vehicle).image;
     let result;
     let pics;
     let seats;
