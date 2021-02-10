@@ -8,47 +8,43 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
-        
+
         <title>TimsCounter</title>
     </head>
     <body>
-        
-        <form >
-            <label for="user_num">Think of a number:</label>
+        <form>
+            <label for="user_item">How many </label>
+            <select name="user_item" id="useritem">
+                <option value="car">Cars</option>
+                <option value="bus">Buses</option>
+                <option value="Boeing747">Boeing 747s</option>
+                <option value="OlympiaStadion">Olympia Stadions</option>
+            </select>
+            <p>would I need to fit in</p>
             <input
                 type="number"
                 id="usernum"
                 name="user_num"
                 min="0"
+                max="100000001"
                 oninput="validity.valid||(value='');"
             />
+            <label for="user_num">people?</label>
 
-            <label for="user_item">Choose an item:</label>
-
-            <select name="user_item" id="useritem">
-                <option value="car">Car</option>
-                <option value="bus">Bus</option>
-                <option value="Boeing747">Boeing 747</option>
-                <option value="OlympiaStadion">Olympia Stadion</option>
-            </select>
-
-            <input type="button" value="Submit" onclick="calcCapacity('usernum', 'useritem');"/>
+            <input
+                type="button"
+                value="Submit"
+                onclick="calcCapacity('usernum', 'useritem');"
+            />
         </form>
-
 
         <div class="display-modal">
             <div class="modal-x">
                 <p class="X">X</p>
-                </div>
-                <div class="results">
-                    
-                </div>
-                <div id="pic">
-                    <div class="img"></div>
-                </div>
             </div>
+            <div class="results"></div>
+            <div id="pic"></div>
         </div>
-
     </body>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

@@ -1,6 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: #cfe4f0;
+    color: #050f0f;
+}
+
+p {
+    background-color: #88ccf1;
 }
 
 form {
@@ -8,24 +14,39 @@ form {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    background-color: #88ccf1;
+    margin: auto;
+    width: fit-content;
+    border: #3587a4 5px solid;
+    border-radius: 30px;
 }
 
 input,
-select {
+select,
+label {
     border-radius: 10px;
     margin: 10px;
     padding: 5px;
 }
 
+label {
+    background-color: #88ccf1;
+}
+
 .display-modal {
-    border: green 2px solid;
+    border: #3587a4 5px solid;
+    background-color: #88ccf1;
+    border-radius: 10px;
+
     display: flex;
     flex-direction: column;
     visibility: hidden;
+    justify-content: space-between;
     align-items: center;
     width: 90%;
     min-height: 20vh;
     margin: auto;
+    margin-top: 1%;
 }
 
 .vis {
@@ -38,6 +59,7 @@ select {
     align-items: flex-end;
     text-align: right;
     width: 100%;
+    background-color: #88ccf1;
 }
 
 .X {
@@ -47,22 +69,30 @@ select {
     font-size: 1rem;
     font-weight: bold;
     padding: 10px;
+    background-color: #88ccf1;
 }
 
 .results {
-    background-color: yellow;
-    padding: 5px;
     width: 90%;
+    background-color: #88ccf1;
+    margin: 0 0 1% 0;
 }
 
 #pic {
-    background-color: green;
-    padding: 5px;
-    min-height: 50px;
-    width: 50px;
+    width: 90%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    background-color: #3587a4;
+    border-radius: 10px;
+    margin-bottom: 1%;
 }
 
 img {
-    height: 100%;
-    width: 100%;
+    height: 100px;
+    margin: 10px;
+    border: #3587a4 2px solid;
+    border-radius: 10px;
 }
