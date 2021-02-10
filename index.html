@@ -12,31 +12,7 @@
         <title>TimsCounter</title>
     </head>
     <body>
-        <form>
-            <label for="user_item">How many </label>
-            <select name="user_item" id="useritem">
-                <option value="car">Cars</option>
-                <option value="bus">Buses</option>
-                <option value="Boeing747">Boeing 747s</option>
-                <option value="OlympiaStadion">Olympia Stadions</option>
-            </select>
-            <p>would I need to fit in</p>
-            <input
-                type="number"
-                id="usernum"
-                name="user_num"
-                min="0"
-                max="100000001"
-                oninput="validity.valid||(value='');"
-            />
-            <label for="user_num">people?</label>
-
-            <input
-                type="button"
-                value="Submit"
-                onclick="calcCapacity('usernum', 'useritem');"
-            />
-        </form>
+        <form id="userInput"></form>
 
         <div class="display-modal">
             <div class="modal-x">

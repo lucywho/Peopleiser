@@ -1,10 +1,61 @@
 console.log("script connected", $);
 let vehicles = [
-    { name: "car", capacity: 4, image: "assets/car.jpg" },
-    { name: "bus", capacity: 55, image: "assets/berlinbus.png" },
-    { name: "Boeing747", capacity: 500, image: "assets/boeing747.jpg" },
-    { name: "OlympiaStadion", capacity: 75000, image: "assets/olympstad.jpg" },
+    { name: "car", capacity: 4, image: "assets/car.jpg", listAs: "Cars" },
+    {
+        name: "bus",
+        capacity: 55,
+        image: "assets/berlinbus.png",
+        listAs: "Buses",
+    },
+    {
+        name: "Boeing747",
+        capacity: 500,
+        image: "assets/boeing747.jpg",
+        listAs: "Boeing747s",
+    },
+    {
+        name: "OlympiaStadion",
+        capacity: 75000,
+        image: "assets/olympstad.jpg",
+        listAs: "Olympia Stadions",
+    },
 ];
+
+let option1 = vehicles[0].name;
+let option2 = vehicles[1].name;
+let option3 = vehicles[2].name;
+let option4 = vehicles[3].name;
+
+let listAs1 = vehicles[0].listAs;
+let listAs2 = vehicles[1].listAs;
+let listAs3 = vehicles[2].listAs;
+let listAs4 = vehicles[3].listAs;
+
+$(document).ready(function() {
+    $("#userInput").html(`<label for="user_item">How many </label>
+    <select name="user_item" id="useritem">
+    <option value="${option1}">${listAs1}</option>
+    <option value="${option2}">${listAs2}</option>
+    <option value="${option3}">${listAs3}</option>
+    <option value="${option4}">${listAs4}</option>
+    </select>
+    <p>would I need to fit in</p>
+    <input
+        type="number"
+        id="usernum"
+        name="user_num"
+        min="0"
+        max="100000001"
+        oninput="validity.valid||(value='');"
+    />
+    <label for="user_num">people?</label>
+
+    <input
+        type="button"
+        value="Submit"
+        onclick="calcCapacity('usernum', 'useritem');"
+    />`);
+});
 
 function calcCapacity() {
     if ($(".display-modal").hasClass("vis")) {
