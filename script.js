@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 function calcCapacity() {
     if ($(".display-modal").hasClass("vis")) {
-        $(".display-modal").removeClass("vis");
+        $(".results").html(`Calculating. Please wait`);
         $("#pic").empty();
     }
 
@@ -72,8 +72,6 @@ function calcCapacity() {
     let seats;
 
     $(".display-modal").addClass("vis");
-
-    $(".results").html(`Calculating. Please wait`);
 
     if (!people || people == 0) {
         $(".results").html(`please choose a number`);
