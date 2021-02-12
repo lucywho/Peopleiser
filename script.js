@@ -1,33 +1,80 @@
-console.log("script connected", $);
-let data = [
-    { name: "car", capacity: 4, image: "assets/car.jpg", listAs: "Cars" },
-    {
-        name: "bus",
-        capacity: 55,
-        image: "assets/berlinbus.png",
-        listAs: "Buses",
-    },
-    {
-        name: "Boeing747",
-        capacity: 500,
-        image: "assets/boeing747.jpg",
-        listAs: "Boeing747s",
-    },
-    {
-        name: "Ferry",
-        capacity: 2000,
-        image: "assets/ferry.jpg",
-        listAs: "Cross Channel Ferries",
-    },
-    {
-        name: "OlympiaStadion",
-        capacity: 75000,
-        image: "assets/olympstad.jpg",
-        listAs: "Olympia Stadions",
-    },
-];
+// let data = [
+//     { name: "car", capacity: 4, image: "assets/car.jpg", listAs: "Cars" },
+//     {
+//         name: "bus",
+//         capacity: 55,
+//         image: "assets/berlinbus.png",
+//         listAs: "Buses",
+//     },
+//     {
+//         name: "Boeing747",
+//         capacity: 500,
+//         image: "assets/boeing747.jpg",
+//         listAs: "Boeing747s",
+//     },
+//     {
+//         name: "Ferry",
+//         capacity: 2000,
+//         image: "assets/ferry.jpg",
+//         listAs: "Cross Channel Ferries",
+//     },
+//     {
+//         name: "OlympiaStadion",
+//         capacity: 75000,
+//         image: "assets/olympstad.jpg",
+//         listAs: "Olympia Stadions",
+//     },
+// ];
+
+// === mock csv file === //
+let input =
+    "car,4,assets/car.jpg,Cars;bus,55,assets/berlinbus.png,Buses;Boeing747,500,assets/boeing747.jpg,Boeing747s;Ferry,2000,assets/ferry.jpg,Cross Channel Ferries;OlympiaStadion,75000,assets/olympstad.jpg,Olympia Stadions";
+
+// === read csv input and parse into "data" object ===//
+
+let csvData = [];
+let data = [];
+
+var obj_csv = {
+    size: 0,
+    dataFile: [],
+};
+
+function readImage(input) {
+    console.log("input: ", input);
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+        reader.readAsBinaryString(input.files[0]);
+        reader.onload = function(e) {
+            console.log(e);
+            obj_csv.size = e.total;
+            obj_csv.dataFile = e.target.result;
+            console.log("obj_csv.dataFile: ", obj_csv.dataFile);
+            parseData(obj_csv.dataFile);
+        };
+    }
+}
+
+function parseData(d) {
+    let lbreak = d.split(";");
+    //note use /n for real csv file
+    lbreak.forEach((res) => {
+        csvData.push(res.split(","));
+    });
+    for (i = 0; i < csvData.length; i++) {
+        data[i] = {
+            name: csvData[i][0],
+            capacity: csvData[i][1],
+            image: csvData[i][2],
+            listAs: csvData[i][3],
+        };
+    }
+}
+
+//=======
 
 $(document).ready(function() {
+    parseData(input);
     $("#userInput").html(`<label for="user_item">How many </label>
     <select name="user_item" id="useritem">
     
