@@ -129,7 +129,7 @@ function calcCapacity() {
 
         let leftover = vCap - remainder;
 
-        if (leftover === vCap) {
+        if (remainder == 0) {
             space = 0;
         } else {
             space = leftover;
