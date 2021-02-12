@@ -28,7 +28,7 @@
 
 // === mock csv file === //
 let input =
-    "car,4,assets/car.jpg,Cars;bus,55,assets/berlinbus.png,Buses;Boeing747,500,assets/boeing747.jpg,Boeing747s;Ferry,2000,assets/ferry.jpg,Cross Channel Ferries;OlympiaStadion,75000,assets/olympstad.jpg,Olympia Stadions";
+    "car,4,assets/car.jpg,Cars;bus,55,assets/berlinbus.png,Buses;Boeing747,500,assets/boeing747.jpg,Boeing747s;ferry,2000,assets/ferry.jpg,Cross Channel Ferries;OlympiaStadion,75000,assets/olympstad.jpg,Olympia Stadions";
 
 // === read csv input and parse into "data" object ===//
 
@@ -75,6 +75,7 @@ function parseData(d) {
 
 $(document).ready(function() {
     parseData(input);
+
     $("#userInput").html(`<label for="user_item">How many </label>
     <select name="user_item" id="useritem">
     
@@ -105,11 +106,6 @@ $(document).ready(function() {
 });
 
 function calcCapacity() {
-    if ($(".display-modal").hasClass("vis")) {
-        $(".results").html(`Calculating. Please wait`);
-        $("#pic").empty();
-    }
-
     let people = $("#usernum").val();
     let vehicle = $("#useritem").val();
     let vCap = data.find((item) => item.name === vehicle).capacity;
@@ -117,6 +113,10 @@ function calcCapacity() {
     let result;
     let pics;
     let seats;
+
+    if ($(".display-modal").hasClass("vis")) {
+        $("#pic").empty();
+    }
 
     $(".display-modal").addClass("vis");
 
@@ -135,7 +135,7 @@ function calcCapacity() {
             space = leftover;
         }
 
-        if (space == 1) {
+        if (space === 1) {
             seats = "seat";
         } else {
             seats = "seats";
@@ -143,58 +143,25 @@ function calcCapacity() {
 
         if (result === 1) {
             if (people == 1) {
-                $(".results").html(
-                    people +
-                        " person will fit into " +
-                        result +
-                        " " +
-                        vehicle +
-                        " with " +
-                        space +
-                        " " +
-                        seats +
-                        " left over"
-                );
+                $(".results").html(`
+                    ${people} person will fit into ${result} ${vehicle} with ${space} ${seats} left over`);
             } else {
                 $(".results").html(
-                    people +
-                        " people will fit into " +
-                        result +
-                        " " +
-                        vehicle +
-                        " with " +
-                        space +
-                        " " +
-                        seats +
-                        " left over"
+                    `${people} people will fit into ${result} ${vehicle} with ${space} ${seats} left over`
                 );
             }
         } else {
             if (vehicle == "bus") {
                 $(".results").html(
-                    people +
-                        " people will fit into " +
-                        result +
-                        " " +
-                        vehicle +
-                        "es with " +
-                        space +
-                        " " +
-                        seats +
-                        " left over"
+                    `${people} people will fit into ${result} ${vehicle}es with ${space} ${seats} left over`
+                );
+            } else if (vehicle == "ferry") {
+                $(".results").html(
+                    `${people} people will fit into ${result} ferries with ${space} ${seats} left over`
                 );
             } else {
                 $(".results").html(
-                    people +
-                        " people will fit into " +
-                        result +
-                        " " +
-                        vehicle +
-                        "s with " +
-                        space +
-                        " " +
-                        seats +
-                        " left over"
+                    `${people} people will fit into ${result} ${vehicle}s with ${space} ${seats} left over`
                 );
             }
         }
