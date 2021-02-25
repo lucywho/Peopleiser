@@ -54,6 +54,10 @@ $(document).ready(function () {
             "<option value=" + data[i].name + ">" + data[i].listAs + "</option>"
         );
     }
+
+    $(".credits_text").html(
+        `<b>Credits</b> <br> &copy <a href="https://lucysco.de/">Lucy Toman 2021</a> <br> From an original idea by Tim Duckett <br> Banner Photo by <a href="https://www.pexels.com/@krizjohn-rosales-251185?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Krizjohn Rosales</a> from Pexels <br>`
+    );
 });
 
 function calcCapacity() {
@@ -129,5 +133,17 @@ $(".X").on("click", function (e) {
     location.reload();
 });
 
-//variable width
-// let wide = remainder from capacity calc ; final pic to have .css("width", wide + "px") /
+//creditscode
+const menu = $("#menu");
+const shut = $("#close");
+
+menu.click(function (e) {
+    console.log("clicked on menu");
+    $(".credits").addClass("up");
+    e.stopPropagation();
+});
+
+shut.click(function (e) {
+    console.log("clicked on close", e);
+    $(".credits").removeClass("up");
+});

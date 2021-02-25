@@ -92,7 +92,6 @@ label {
 .display-modal {
     align-items: center;
     background-image: linear-gradient(to bottom, #88ccf1 50%, transparent);
-    /* background-color: #88ccf1; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -165,4 +164,47 @@ img {
     min-width: 150px;
     margin: 15px;
     object-fit: cover;
+}
+
+img#menu {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    height: 20px;
+    min-width: 20px;
+    margin: 0 0 0 0.25rem;
+    cursor: pointer;
+}
+
+.credits {
+    background-color: #050f0f;
+    color: #f0fafa;
+    height: 110px;
+    padding: 0.25rem 0 0 0.25rem;
+    width: 100%;
+    visibility: hidden;
+}
+
+.credits_text {
+    color: #f0fafa;
+}
+
+.credits_text > b {
+    color: #f0fafa;
+}
+
+#close {
+    border: #f0fafa 1px solid;
+    color: #f0fafa;
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 2px;
+    width: fit-content;
+}
+
+.up {
+    visibility: visible;
+}
+
+@media screen and (min-width: 350px) and (max-width: 480px) {
 }
