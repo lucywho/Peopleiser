@@ -31,7 +31,7 @@ $(document).ready(function () {
     <select name="user_item" id="useritem">
     
     </select>
-    <p>would I need to fit in</p>
+    <p>will hold</p>
     <input
         type="number"
         id="usernum"
@@ -95,30 +95,29 @@ function calcCapacity() {
         if (result === 1) {
             if (people == 1) {
                 $(".results").html(`
-                    ${people} person will fit into ${result} ${vehicle} with ${space} ${seats} left over`);
+                ${result} ${vehicle} will hold ${people} person with ${space} ${seats} left over`);
             } else {
                 $(".results").html(
-                    `${people} people will fit into ${result} ${vehicle} with ${space} ${seats} left over`
+                    `${result} ${vehicle} will hold ${people} people with ${space} ${seats} left over`
                 );
             }
         } else {
             if (vehicle == "bus") {
                 $(".results").html(
-                    `${people} people will fit into ${result} ${vehicle}es with ${space} ${seats} left over`
+                    `${result} ${vehicle}es will hold ${people} people with ${space} ${seats} left over`
                 );
             } else if (vehicle == "ferry") {
                 $(".results").html(
-                    `${people} people will fit into ${result} ferries with ${space} ${seats} left over`
+                    `${result} ferries will hold ${people} people with ${space} ${seats} left over`
                 );
             } else {
                 $(".results").html(
-                    `${people} people will fit into ${result} ${vehicle}s with ${space} ${seats} left over`
+                    `${result} ${vehicle}s will hold ${people} people with ${space} ${seats} left over`
                 );
             }
         }
 
-        let number = result;
-        for (var i = 0; i < number; i++) {
+        for (var i = 0; i < result; i++) {
             pics = "<img src='" + vPic + "'/>";
             $("#pic").append(pics);
         }
