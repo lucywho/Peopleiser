@@ -145,5 +145,5 @@ menu.click(function (e) {
 
 shut.click(function (e) {
     console.log("clicked on close", e);
-    $(".credits").removeClass("up");
+    $(".credits").removeClass("up").addClass("down");
 });

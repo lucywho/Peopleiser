@@ -1,7 +1,6 @@
 * {
     color: #050f0f;
     font-family: "Jura", sans-serif;
-
     padding: 0;
     margin: 0;
 }
@@ -11,15 +10,22 @@ body {
     background-color: #f0fafa;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 97vh;
+
+    overflow-x: hidden;
 }
 footer {
     background-color: #050f0f;
     color: #f0fafa;
+    display: flex;
     font-size: 0.75rem;
+    height: 3vh;
     padding: 5px 0;
     text-align: left;
     width: 100%;
+    position: fixed;
+    bottom: 0;
+    align-items: center;
 }
 
 a {
@@ -30,6 +36,7 @@ h1 {
     background-color: transparent;
     color: #f0fafa;
     font-weight: normal;
+    padding: 1.25rem 0 0 0.25rem;
 }
 
 h1 > b {
@@ -65,16 +72,16 @@ label {
     background-color: black;
     background-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
     background-image: linear-gradient(
-            to bottom,
+            to right,
             transparent,
-            rgba(53, 135, 164, 0.73)
+            rgba(53, 135, 164, 0.8)
         ),
         url("./assets/bannerpic.jpg");
     background-size: cover;
     font-size: 2rem;
     min-height: 35vh;
     margin-bottom: 1rem;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 
@@ -95,15 +102,16 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: auto;
-    margin-top: 1%;
+
+    margin: 1% auto 3%;
     min-height: 20vh;
     visibility: hidden;
     width: 100%;
+    overflow-y: auto;
 }
 
 .vis {
-    visibility: visible;
+    animation: fadeUp 1s forwards;
 }
 
 .modal-head {
@@ -178,9 +186,13 @@ img#menu {
 
 .credits {
     background-color: #050f0f;
+    bottom: 5vh;
     color: #f0fafa;
     height: 110px;
+    left: 0;
+    margin-bottom: 5px;
     padding: 0.25rem 0 0 0.25rem;
+    position: absolute;
     width: 100%;
     visibility: hidden;
 }
@@ -203,10 +215,44 @@ img#menu {
 }
 
 .up {
-    visibility: visible;
+    animation: fadeUp 1s forwards;
 }
 
+.down {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0%;
+        visibility: hidden;
+    }
+    to {
+        opacity: 100%;
+        visibility: visible;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 100%;
+        visibility: visible;
+    }
+    to {
+        opacity: 0%;
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 1026px) {
+    h1 {
+        padding: 0.25rem 0 0 0.25rem;
+    }
+}
 @media screen and (max-width: 480px) {
+    h1 {
+        padding: 0.25rem 0 0 0.25rem;
+    }
     form {
         align-items: center;
         display: flex;
