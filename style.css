@@ -8,36 +8,33 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: #cfe4f0;
+    background-color: #f0fafa;
     align-items: center;
     min-height: 100vh;
 }
 
 h1 {
     font-weight: normal;
-    color: blanchedalmond;
+    color: #f0fafa;
     background-color: transparent;
 }
 
 h1 > b {
-    color: blanchedalmond;
     background-color: transparent;
+    color: #f0fafa;
 }
 
 p {
-    background-color: #88ccf1;
+    font-weight: bold;
 }
 
 form {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    background-color: rgb(136, 204, 241);
-    width: fit-content;
-    border: rgb(53, 135, 164) 5px solid;
-    border-radius: 30px;
-    padding: 5px;
+
+    width: 100%;
 }
 
 input,
@@ -45,10 +42,11 @@ select {
     border-radius: 10px;
     margin: 10px;
     padding: 5px;
+    background-color: transparent;
 }
 
 label {
-    background-color: #88ccf1;
+    font-weight: bold;
 }
 
 #banner {
@@ -70,15 +68,14 @@ label {
 
 #submit {
     margin-top: 15px;
+    font-weight: bold;
+    padding: 5px;
 }
 
 #submit:hover {
     background-color: #3587a4;
-    color: #88ccf1;
-}
 
-select:focus {
-    outline: none;
+    color: #88ccf1;
 }
 
 .display-modal {

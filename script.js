@@ -13,7 +13,7 @@ let data = [
         listAs: "Boeing747s",
     },
     {
-        name: "Ferry",
+        name: "ferry",
         capacity: 2000,
         image: "assets/ferry.jpg",
         listAs: "Cross Channel Ferries",
