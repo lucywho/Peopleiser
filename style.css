@@ -3,7 +3,7 @@
     padding: 0;
     background-color: #cfe4f0;
     color: #050f0f;
-    font-family: "Proza Libre", sans-serif;
+    font-family: "Jura", sans-serif;
 }
 
 body {
@@ -12,6 +12,10 @@ body {
 
     align-items: center;
     margin-top: 1%;
+}
+
+h1 {
+    font-weight: normal;
 }
 
 p {
