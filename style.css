@@ -17,6 +17,7 @@ body {
 #content {
     flex-grow: 1;
     width: 100%;
+    position: relative;
 }
 
 footer {
@@ -190,11 +191,10 @@ img#menu {
 
 .credits {
     background-color: #050f0f;
-    bottom: 5vh;
     color: #f0fafa;
-    height: 110px;
+    height: fit-content;
     left: 0;
-    margin-bottom: 5px;
+    bottom: 0;
     padding: 0.25rem 0 0 0.25rem;
     position: absolute;
     width: 100%;
@@ -213,7 +213,7 @@ img#menu {
     border: #f0fafa 1px solid;
     color: #f0fafa;
     cursor: pointer;
-    margin-top: 5px;
+    margin: 5px 0;
     padding: 2px;
     width: fit-content;
 }

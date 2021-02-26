@@ -139,7 +139,7 @@ const shut = $("#close");
 
 menu.click(function (e) {
     console.log("clicked on menu");
-    $(".credits").addClass("up");
+    $(".credits").removeClass("down").addClass("up");
     e.stopPropagation();
 });
 
