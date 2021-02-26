@@ -10,21 +10,25 @@ body {
     background-color: #f0fafa;
     display: flex;
     flex-direction: column;
-    height: 97vh;
-
+    height: 100vh;
     overflow-x: hidden;
 }
+
+#content {
+    flex-grow: 1;
+    width: 100%;
+}
+
 footer {
     background-color: #050f0f;
     color: #f0fafa;
     display: flex;
     font-size: 0.75rem;
+    flex-shrink: 0;
     height: 3vh;
     padding: 5px 0;
     text-align: left;
     width: 100%;
-    position: fixed;
-    bottom: 0;
     align-items: center;
 }
 
@@ -82,7 +86,7 @@ label {
     min-height: 35vh;
     margin-bottom: 1rem;
     text-align: left;
-    width: 100%;
+    min-width: 100vh;
 }
 
 #submit {
