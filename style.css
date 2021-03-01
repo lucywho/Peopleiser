@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 100%;
     overflow-x: hidden;
 }
 
@@ -87,7 +88,7 @@ label {
     min-height: 35vh;
     margin-bottom: 1rem;
     text-align: left;
-    min-width: 100vh;
+    min-width: 100vw;
 }
 
 #submit {
@@ -179,6 +180,13 @@ img {
     object-fit: cover;
 }
 
+.more {
+    font-size: 5rem;
+    color: #f0fafa;
+    text-align: center;
+    min-width: 100px;
+}
+
 img#menu {
     border: none;
     border-radius: 0;
@@ -253,15 +261,23 @@ img#menu {
         padding: 0.25rem 0 0 0.25rem;
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 440px) {
     h1 {
         padding: 0.25rem 0 0 0.25rem;
+        font-size: smaller;
     }
     form {
         align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         width: 100%;
+    }
+    img {
+        height: 50px;
+        min-width: 75px;
+        margin: 5px;
+        object-fit: cover;
     }
 }

@@ -130,9 +130,10 @@ function calcCapacity() {
                 for (var i = 0; i < 9; i++) {
                     $("#pic").append(pics);
                 }
-                $("#pic").append(
-                    "<img src='assets/menuicon.png' style='min-width: 150px; border: none; box-shadow: none'/>"
-                );
+                // $("#pic").append(
+                //     "<img src='assets/menuicon.png' style='border: none; box-shadow: none'/>"
+                // );
+                $("#pic").append("<div class='more'>" + "..." + "</div>");
             }
         }
     }
