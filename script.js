@@ -66,7 +66,7 @@ function calcCapacity() {
     let vCap = data.find((item) => item.name === vehicle).capacity;
     let vPic = data.find((item) => item.name === vehicle).image;
     let result;
-    let pics;
+    let pics = "<img src='" + vPic + "'/>";
     let seats;
 
     if ($(".display-modal").hasClass("vis")) {
@@ -121,9 +121,19 @@ function calcCapacity() {
             }
         }
 
-        for (var i = 0; i < result; i++) {
-            pics = "<img src='" + vPic + "'/>";
-            $("#pic").append(pics);
+        if (result <= 10) {
+            for (var i = 0; i < result; i++) {
+                $("#pic").append(pics);
+            }
+        } else if (result > 10) {
+            {
+                for (var i = 0; i < 9; i++) {
+                    $("#pic").append(pics);
+                }
+                $("#pic").append(
+                    "<img src='assets/menuicon.png' style='min-width: 150px; border: none; box-shadow: none'/>"
+                );
+            }
         }
     }
 }
