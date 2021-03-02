@@ -62,6 +62,7 @@ $(document).ready(function () {
 
 function calcCapacity() {
     let people = $("#usernum").val();
+
     let vehicle = $("#useritem").val();
     let vCap = data.find((item) => item.name === vehicle).capacity;
     let vPic = data.find((item) => item.name === vehicle).image;
@@ -73,11 +74,11 @@ function calcCapacity() {
 
     let leftover = vCap - remainder;
 
-    if ($(".display-modal").hasClass("vis")) {
+    if ($(".display-modal").hasClass("vis") || $("#usernum").val() == 0) {
         $("#pic").empty();
     }
 
-    $(".display-modal").addClass("vis");
+    $(".display-modal").addClass("vis").removeClass("invis");
 
     if (!people || people == 0) {
         $(".results").html(`please choose a number`);
@@ -139,8 +140,10 @@ function calcCapacity() {
 }
 
 $(".X").on("click", function (e) {
-    $(".display-modal").removeClass("vis");
-    location.reload();
+    $(".display-modal").addClass("invis").removeClass("vis");
+    setTimeout(function () {
+        $("#userInput")[0].reset();
+    }, 1001);
 });
 
 //creditscode
@@ -148,12 +151,9 @@ const menu = $("#menu");
 const shut = $("#close");
 
 menu.click(function (e) {
-    console.log("clicked on menu");
     $(".credits").removeClass("down").addClass("up");
-    e.stopPropagation();
 });
 
 shut.click(function (e) {
-    console.log("clicked on close", e);
     $(".credits").removeClass("up").addClass("down");
 });
