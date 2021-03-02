@@ -151,9 +151,13 @@ const menu = $("#menu");
 const shut = $("#close");
 
 menu.click(function (e) {
-    $(".credits").removeClass("down").addClass("up");
+    $(".credits").css({
+        height: "fit-content",
+        visibility: "visible",
+        opacity: "100%",
+    });
 });
 
 shut.click(function (e) {
-    $(".credits").removeClass("up").addClass("down");
+    $(".credits").css({ opacity: "0%", visibility: "hidden", height: "0" });
 });

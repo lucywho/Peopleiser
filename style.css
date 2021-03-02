@@ -11,8 +11,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 100%;
-    /* overflow-x: hidden; */
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 #content {
@@ -209,13 +209,19 @@ img#menu {
 .credits {
     background-color: #050f0f;
     color: #f0fafa;
-    height: fit-content;
+    height: 0;
+    width: fit-content;
     left: 0;
     bottom: 0;
     padding: 0.5rem;
     position: absolute;
-    width: fit-content;
     visibility: hidden;
+
+    overflow-y: hidden;
+    transition-property: height, visibility, opacity;
+    transition-duration: 3s;
+
+    transition-timing-function: ease;
 }
 
 .credits_text,
@@ -242,13 +248,17 @@ img#menu {
     background-color: #f0fafa;
 }
 
-.up {
-    animation: slide-up 1s forwards;
-}
+/* .credits.up {*/
+/* animation: slide-up 2s forwards; */
+/* height: fit-content;
+    visibility: visible;
+} */
 
-.down {
-    animation: slide-down 1s forwards;
-}
+/* .credits.down {*/
+/* animation: slide-down 2s forwards; */
+/* visibility: hidden;
+    height: 0;
+} */
 
 @keyframes fadeUp {
     from {
@@ -274,13 +284,11 @@ img#menu {
 
 @keyframes slide-up {
     from {
-        bottom: -10%;
         opacity: 0%;
         visibility: hidden;
     }
 
     to {
-        bottom: 0;
         opacity: 100%;
         visibility: visible;
     }
@@ -288,14 +296,13 @@ img#menu {
 
 @keyframes slide-down {
     from {
-        bottom: 0;
         opacity: 100%;
         visibility: visible;
     }
     to {
-        bottom: -25%;
         opacity: 0%;
         visibility: hidden;
+        overflow: hidden;
     }
 }
 
