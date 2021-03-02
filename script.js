@@ -65,9 +65,13 @@ function calcCapacity() {
     let vehicle = $("#useritem").val();
     let vCap = data.find((item) => item.name === vehicle).capacity;
     let vPic = data.find((item) => item.name === vehicle).image;
-    let result;
     let pics = "<img src='" + vPic + "'/>";
-    let seats;
+    let seats = "";
+    let quotient = people / vCap;
+    let remainder = people % vCap;
+    let result = Math.ceil(quotient);
+
+    let leftover = vCap - remainder;
 
     if ($(".display-modal").hasClass("vis")) {
         $("#pic").empty();
@@ -78,12 +82,6 @@ function calcCapacity() {
     if (!people || people == 0) {
         $(".results").html(`please choose a number`);
     } else {
-        let quotient = people / vCap;
-        let remainder = people % vCap;
-        result = Math.ceil(quotient);
-
-        let leftover = vCap - remainder;
-
         if (remainder == 0) {
             space = 0;
         } else {
@@ -130,10 +128,11 @@ function calcCapacity() {
                 for (var i = 0; i < 9; i++) {
                     $("#pic").append(pics);
                 }
-                // $("#pic").append(
-                //     "<img src='assets/menuicon.png' style='border: none; box-shadow: none'/>"
-                // );
-                $("#pic").append("<div class='more'>" + "..." + "</div>");
+                $("#pic").append(
+                    `<div class='more'> plus ${
+                        result - 9
+                    } more ... <br> Choose another option <br> for a better visualisation </div>`
+                );
             }
         }
     }
