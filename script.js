@@ -37,6 +37,7 @@ $(document).ready(function () {
         id="usernum"
         name="user_num"
         min="0"
+        placeholder="0"
         max="100000001"
         oninput="validity.valid||(value='');"
     />
@@ -74,7 +75,7 @@ function calcCapacity() {
 
     let leftover = vCap - remainder;
 
-    if ($(".display-modal").hasClass("vis") || $("#usernum").val() == 0) {
+    if ($(".display-modal").hasClass("vis")) {
         $("#pic").empty();
     }
 
@@ -141,8 +142,10 @@ function calcCapacity() {
 
 $(".X").on("click", function (e) {
     $(".display-modal").addClass("invis").removeClass("vis");
+    $("#pic").empty();
     setTimeout(function () {
         $("#userInput")[0].reset();
+        people = 0;
     }, 1001);
 });
 
@@ -151,13 +154,9 @@ const menu = $("#menu");
 const shut = $("#close");
 
 menu.click(function (e) {
-    $(".credits").css({
-        height: "fit-content",
-        visibility: "visible",
-        opacity: "100%",
-    });
+    $(".credits").removeClass("invis").addClass("vis");
 });
 
 shut.click(function (e) {
-    $(".credits").css({ opacity: "0%", visibility: "hidden", height: "0" });
+    $(".credits").removeClass("vis").addClass("invis");
 });
