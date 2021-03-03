@@ -1,5 +1,10 @@
 let data = [
-    { name: "car", capacity: 4, image: "assets/car.jpg", listAs: "Cars" },
+    {
+        name: "car",
+        capacity: 4,
+        image: "assets/yellow-car.png",
+        listAs: "Cars",
+    },
     {
         name: "bus",
         capacity: 55,
