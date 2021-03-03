@@ -163,8 +163,9 @@ label {
     background-color: #88ccf1;
     justify-content: center;
     padding-left: 2.5%;
-
-    text-align: left;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
     width: 100%;
 }
 
@@ -180,9 +181,8 @@ label {
 }
 
 img {
-    border: #88ccf1 2px solid;
+    border: #88ccf1 1px solid;
     border-radius: 10px;
-    box-shadow: 10px 10px 5px #050f0f;
     height: 100px;
     min-width: 150px;
     margin: 15px;

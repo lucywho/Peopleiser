@@ -15,7 +15,7 @@ let data = [
         name: "Boeing747",
         capacity: 500,
         image: "assets/boeing747.jpg",
-        listAs: "Boeing747s",
+        listAs: "Boeing 747s",
     },
     {
         name: "ferry",
@@ -24,10 +24,10 @@ let data = [
         listAs: "Cross Channel Ferries",
     },
     {
-        name: "OlympiaStadion",
+        name: "Olympiastadion",
         capacity: 75000,
-        image: "assets/olympstad.jpg",
-        listAs: "Olympia Stadions",
+        image: "assets/olympiastadion.jpg",
+        listAs: "Olympiastadions",
     },
 ];
 
@@ -62,7 +62,7 @@ $(document).ready(function () {
     }
 
     $(".credits_text").html(
-        `<b>Credits</b> <br> &copy <a href="https://lucysco.de/">Lucy Toman 2021</a> <br> From an original idea by Tim Duckett <br> Banner Photo by <a href="https://www.pexels.com/@krizjohn-rosales-251185?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Krizjohn Rosales</a> from Pexels <br>`
+        `<b>Credits</b> <br> <br> <b>Images</b> <br> Banner Photo by <a href="https://www.pexels.com/@krizjohn-rosales-251185?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels target="_"">Krizjohn Rosales</a> from Pexels <br> Car image from <a href="http://clipart-library.com" target="_">Clipart Library</a> <br> Berlin bus image from <a href="https://unternehmen.bvg.de/" target="_">BVG</a> <br> "Spirit of Britain" image from <a href="https://en.wikipedia.org/wiki/MS_Spirit_of_Britain" target="_">Wikipedia.org</a> <br> OlympiaStadion image from <a href="https://www.needpix.com/" target="_">Needpix.com</a> <br> <br> <b>Website</b> <br> &copy <a href="https://lucysco.de/" target="_">Lucy Toman 2021</a> <br> From an original idea by <a href="https://trashpanda.cc/" target="_">Tim Duckett </a><br><br>   `
     );
 });
 
